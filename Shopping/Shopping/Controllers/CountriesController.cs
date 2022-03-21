@@ -74,6 +74,7 @@ namespace Shopping.Controllers
             return View(country);
 
         }
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,6 +90,8 @@ namespace Shopping.Controllers
             return View(country);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Country country)
         {
             if (id != country.Id)
