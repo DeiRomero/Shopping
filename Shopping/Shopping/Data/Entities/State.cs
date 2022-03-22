@@ -2,20 +2,21 @@
 
 namespace Shopping.Data.Entities
 {
-    public class Country
+    public class State
     {
         public int Id { get; set; }
         //DataAnnotations//
-        [Display(Name = "Pais")]
+        [Display(Name = "Departamento/Estado")]
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El Campo {0} es obligatorio.")]
         public string Name { get; set; }
 
-        public ICollection<State> states { get; set; }
+        public Country Country { get; set; }
 
-        [Display(Name = "Departamento/Estados")]
-        public int StatesNumber => states == null ? 0 : states.Count;
+        public ICollection<City> Cities { get; set; }
 
+        [Display(Name = "Ciudades")]
+        public int CitiesNumber => Cities == null ? 0 : Cities.Count;
 
     }
 }
