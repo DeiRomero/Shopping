@@ -6,7 +6,7 @@ namespace Shopping.Data.Entities
     {
 
         public int Id { get; set; }
-        //DataAnnotations//
+        
         [Display(Name = "Ciudad")]
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El Campo {0} es obligatorio.")]
